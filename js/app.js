@@ -6,12 +6,6 @@ var tile = {
     heightOffset: 60
 };
 
-// To generate a random integer between a given range
-function intRandom(min, max) {
-    var result = Math.floor(Math.random() * (max - min + 1) + min);
-    return result;
-}
-
 // Enemies our player must avoid
 var Enemy = function () {
     // Variables applied to each of our instances go here,
@@ -20,14 +14,21 @@ var Enemy = function () {
     // The image/sprite for our enemies, this uses
     // a helper we"ve provided to easily load images
     this.sprite = "images/enemy-bug.png";
-    this.speed = intRandom(60, 300);
+    this.speed = this.intRandom(60, 300);
     this.init();
 };
 
 Enemy.prototype.init = function () {
     this.x = -tile.width;
-    this.y = Math.round(tile.height * intRandom(1, 3) - tile.height / 3);
+    this.y = Math.round(tile.height * this.intRandom(1, 3) - tile.height / 3);
 };
+
+// To generate a random integer between a given range
+Enemy.prototype.intRandom = function (min, max) {
+    var result = Math.floor(Math.random() * (max - min + 1) + min);
+    return result;
+}
+
 
 // Update the enemy"s position, required method for game
 // Parameter: dt, a time delta between ticks
