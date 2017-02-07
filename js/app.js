@@ -15,11 +15,11 @@ function intRandom(min, max) {
 // Enemies our player must avoid
 var Enemy = function () {
     // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
+    // we"ve provided one for you to get started
 
     // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
-    this.sprite = 'images/enemy-bug.png';
+    // a helper we"ve provided to easily load images
+    this.sprite = "images/enemy-bug.png";
     this.speed = intRandom(60, 300);
     this.init();
 };
@@ -29,7 +29,7 @@ Enemy.prototype.init = function () {
     this.y = Math.round(tile.height * intRandom(1, 3) - tile.height / 3);
 };
 
-// Update the enemy's position, required method for game
+// Update the enemy"s position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function (dt) {
     // You should multiply any movement by the dt parameter
@@ -71,7 +71,7 @@ Enemy.prototype.checkCollision = function () {
 // This class requires an update(), render() and
 // a handleInput() method.
 var Player = function (x, y) {
-    this.sprite = 'images/char-boy.png';
+    this.sprite = "images/char-boy.png";
     this.x = x;
     this.y = y;
 };
@@ -88,7 +88,7 @@ Player.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Reset player's location
+// Reset player"s location
 Player.prototype.reset = function () {
     this.x = tile.width * 2;
     this.y = tile.height * 3 + tile.heightOffset;
@@ -96,13 +96,13 @@ Player.prototype.reset = function () {
 
 // Handle the input to move Player
 Player.prototype.handleInput = function (key) {
-    if (key == 'left' && this.x > 0) {
+    if (key == "left" && this.x > 0) {
         this.x -= tile.width;
-    } else if (key == 'right' && this.x < tile.width * 4) {
+    } else if (key == "right" && this.x < tile.width * 4) {
         this.x += tile.width;
-    } else if (key == 'up' && this.y > 0) {
+    } else if (key == "up" && this.y > 0) {
         this.y -= tile.height;
-    } else if (key == 'down' && this.y < tile.height * 4 + tile.heightOffset) {
+    } else if (key == "down" && this.y < tile.height * 4 + tile.heightOffset) {
         this.y += tile.height;
     }
 };
@@ -111,21 +111,19 @@ Player.prototype.handleInput = function (key) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var allEnemies = [];
-for (var i = 0; i < 3; i++) {
-    allEnemies.push(new Enemy());
-}
+allEnemies.push(new Enemy(), new Enemy(), new Enemy());
 
 var player = new Player();
 player.reset();
 
 // This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
-document.addEventListener('keyup', function (e) {
+// Player.handleInput() method. You don"t need to modify this.
+document.addEventListener("keyup", function (e) {
     var allowedKeys = {
-        37: 'left',
-        38: 'up',
-        39: 'right',
-        40: 'down'
+        37: "left",
+        38: "up",
+        39: "right",
+        40: "down"
     };
     player.handleInput(allowedKeys[e.keyCode]);
 });
