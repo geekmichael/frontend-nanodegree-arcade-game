@@ -6,7 +6,7 @@ var tile = {
     heightOffset: 60
 };
 
-// To generate a random integer
+// To generate a random integer between a given range
 function intRandom(min, max) {
     var result = Math.floor(Math.random() * (max - min + 1) + min);
     return result;
