@@ -1,6 +1,15 @@
-frontend-nanodegree-arcade-game
+# Frontend Nanodegree Arcade Game
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Introduction
+This is my first game made by HTML5 and JavaScript, as a project in the Udacity nanodegree frontend development course. Please access [Udacity nanodegree](http://www.udacity.com) for details.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## How to Run
+Clone or download this repository to a local folder, double click the file index.html, then a web browser window should be displayed with this game interface.
+
+## Play this game
+In this game, you need move the boy to cross the road and arrive the river. Be aware there are bugs running on the road, try to avoid them. If the boy is caught by bug, then game over.
+
+## Game status
+Whether you win or fail, the boy's location will be reset to the bottom-center.
+Check web browser's console, you will see if you win or lose.
